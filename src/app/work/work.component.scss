@@ -1,0 +1,54 @@
+@import '../../sass/output.scss';
+@import '../../sass/components/buttons';
+
+.portfolio {
+
+  &--item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+
+  &--background {
+    width: 100%;
+    background-size: cover;
+    padding-top: 100%;
+
+    &.spotify {
+      background-image: url('../../assets/images/portfolio/spotify-v2.png');
+    }
+
+    &.spotify-old {
+      background-image: url('../../assets/images/portfolio/spotify-v1.png');
+    }
+
+    &.isn {
+      background-image: url('../../assets/images/portfolio/isnetworld-website.png');
+    }
+
+    &.matchflick {
+      background-image: url('../../assets/images/portfolio/matchflick.png');
+    }
+
+    &.movie-trivia {
+      background-image: url('../../assets/images/portfolio/movie-trivia.png');
+    }
+
+    &.tph {
+      background-image: url('../../assets/images/portfolio/tph.png');
+    }
+  }
+
+  &--desc {
+    margin-top: 20px;
+  }
+
+  &--year-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: $color-accent;
+    color: $white;
+    padding: 10px 25px;
+    border-radius: 30px;
+  }
+}

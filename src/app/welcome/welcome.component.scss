@@ -1,0 +1,60 @@
+@import '../../sass/output.scss';
+@import '../../sass/components/buttons';
+
+.welcome {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  &--text {
+    .typing.active::after {
+      max-height: 72px;
+    }
+  }
+
+  &--title-text {
+    .typing.active::after {
+      max-height: 32px;
+    }
+  }
+
+  &--cta {
+    @include transition(.6s ease opacity);
+    margin-top: 30px;
+
+    button {
+      margin: 0 10px 10px;
+    }
+  }
+}
+
+.typing {
+  position: relative;
+  display: inline;
+  font-size: inherit;
+
+  &.active {
+    &::after {
+      @include animation(1s linear blink infinite);
+      content: '';
+      position: absolute;
+      right: -10px;
+      bottom: 0;
+      width: 2px;
+      height: 100%;
+      background: $color-accent;
+    }
+  }
+}
+
+@include keyframes(blink) {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

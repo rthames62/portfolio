@@ -1,0 +1,183 @@
+@import '../sass/output.scss';
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+.canvas-overlay {
+  @include linear-gradient(140deg, $color-main-dark, $black 60%);
+  @include opacity(.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.menu {
+
+  &--wrapper {
+    @include transition(.2s ease right);
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    z-index: 50;
+    width: 100%;
+    height: 100vh;
+    background: rgba($color-accent, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    &.active {
+      right: 0;
+    }
+  }
+
+  &--links {
+    &> a {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 50px;
+      color: $white;
+      font-weight: $weight-bold;
+      text-decoration: none;
+      opacity: .7;
+
+      &.active {
+        opacity: 1;
+        border: 4px solid $white;
+        padding: 10px;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.hamburger-wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 100;
+  cursor: pointer;
+
+  &.active {
+    background: rgba($black, .8);
+
+    .line1 {
+      @include transform(rotate(45deg) matrix(1, 0, 0, 1, 5, 5));
+    }
+
+    .line2 {
+      opacity: 0;
+    }
+
+    .line3 {
+      @include transform(rotate(-45deg) matrix(1, 0, 0, 1, 7, -7));
+    }
+  }
+
+  &:hover {
+    background: rgba($black, .8);
+
+    .line2 {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint(xs) {
+    background: rgba($black, .8);
+  }
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 30px;
+  height: 20px;
+
+  .line1, .line2, .line3 {
+    @include transition(.2s ease all);
+    width: 100%;
+    height: 2px;
+    border-radius: 2px;
+    background: $white;
+  }
+
+  .line2 {
+    width: 60%;
+  }
+}
+
+.router-wrapper {
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+  padding: 50px;
+
+  @include breakpoint(xs) {
+    padding: 20px 10px;
+    height: 78vh;
+  }
+}
+
+.made-with {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  color: $white;
+  font-size: 14px;
+
+  &--text {
+    margin: 0 8px 0 0;
+  }
+
+  i {
+    font-size: 24px;
+    color: $color-angular;
+  }
+}
+
+.social {
+  display: flex;
+  position: fixed;
+  left: 10px;
+  bottom: 20px;
+  z-index: 100;
+
+  &.menu-active {
+    i {
+      &:hover {
+        color: $color-main-dark;
+      }
+    }
+  }
+
+  &--icon {
+    margin: 0 10px;
+
+    i {
+      @include transition(.2s ease all);
+      font-size: 26px;
+      color: $white;
+
+      &:hover {
+        @include transform(rotate(360deg) scale(1.2));
+        color: $color-accent;
+      }
+    }
+  }
+}

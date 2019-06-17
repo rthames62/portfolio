@@ -1,0 +1,14 @@
+<section class="welcome">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1 class="welcome--text accent large"><span class="typing" [ngClass]="{ active: showWelcomeTyping }">{{ welcome }}</span></h1>
+        <h2 class="welcome--title-text"><span class="typing" [ngClass]="{ active: showTitleTyping }">{{ title }}</span></h2>
+        <div class="welcome--cta" [ngClass]="{ hidden: !typingCompleted }">
+          <a routerLink="/portfolio"><button class="transparent">See Work</button></a>
+          <a routerLink="/about"><button class="transparent">Skills</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

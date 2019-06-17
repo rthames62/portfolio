@@ -1,1 +1,54 @@
+@import './sass/output.scss';
+@import './sass/base/reset';
+
 /* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/scss/mixins/grid-framework";
+@import "~bootstrap/scss/mixins/grid";
+
+body {
+  font-family: 'Noto Sans HK', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: $weight-bold;
+  color: $white;
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 40px;
+  margin: 24px 0;
+
+  &.large {
+      font-size: 72px;
+
+      @include breakpoint(xs) {
+        font-size: 48px;
+      }
+  }
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -.2px;
+}
+
+p, a, span {
+  font-size: 14px;
+}
+
+p {
+  margin-bottom: 10px;
+  color: $white;
+  line-height: 18px;
+}
+
+.accent {
+  color: $color-accent;
+}
+
+.hidden {
+  opacity: 0;
+}

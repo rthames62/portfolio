@@ -1,0 +1,25 @@
+/*
+    Useful extend classes
+*/
+
+.flex-all-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grow {
+    @include transition(.2s ease transform);
+
+    &:hover {
+        @include transform(scale(1.06));
+    }
+}
+
+.ellipsis_one_line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding-right: 1px;
+    margin-right: -1px;
+}
