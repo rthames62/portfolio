@@ -23,7 +23,7 @@ export class WelcomeComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     const welcomeText = `Hi, I'm Ryan`;
-    const titleText = `Front-End / UI Developer`;
+    const titleText = `Front-End / Software Engineer`;
 
     timer(1000, 70).pipe(take(welcomeText.length + 1)).subscribe(e => {
       this.welcome = welcomeText.slice(0, e);

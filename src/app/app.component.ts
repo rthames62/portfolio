@@ -49,7 +49,7 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     timer(0, 500).subscribe(e => {
       if (!document.hidden) {
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 5; i++) {
           const size = this.randomNumber(0.5, 2);
           const xOffset = this.randomNumber(1.5, 1.8);
           const yOffset = this.randomNumber(1.5, 1.8);
